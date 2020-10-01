@@ -682,12 +682,12 @@ namespace EYEServiceWebRole
         {
             try
             {
+                // Modify Patients
                 Patient patientToModify = (from patient in data.Patients
                                            where patient.PatientId == newPatient.PatientId
                                            select patient).Single();
 
                 patientToModify.FirstName = newPatient.FirstName;
-                // More statements here
                 data.SubmitChanges();
                 return true;
             }
